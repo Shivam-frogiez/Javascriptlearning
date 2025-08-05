@@ -22,6 +22,20 @@ console.log(js_User["age"]);
 // freezing a value of object to prevent it from being changed
 
 js_User.age = "25"
-Object.freeze(js_User)
+// Object.freeze(js_User)
 js_User.age = "35"
 console.log(js_User["age"]);
+
+// adding function in object
+
+js_User.greeting = function(){
+    console.log("Hello JS user");
+}
+
+console.log(js_User.greeting());
+
+// creatimg another fumction in js to acces another value from a object
+js_User.greetingtwo = function(){
+    console.log(`hello js user, ${this.email}`);  
+}
+console.log(js_User.greetingtwo());
