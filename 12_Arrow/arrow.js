@@ -16,9 +16,36 @@ user1.username = "Gopal"
 
 // we cant use this in function, used in Object only
 
-function thisuser(){
-    const usernamexx = "ShivSinghKeer"
-    console.log(this.usernamexx)
-}
+// function thisuser(){
+//     const usernamexx = "ShivSinghKeer"
+//     console.log(this)
+//     console.log(this.usernamexx)
+// }
 
-thisuser()
+// thisuser()
+
+// const thisuser = function(){
+//     let usernamexx = "Shiv Singh Keer"
+//     console.log(usernamexx)
+// }
+// thisuser()
+
+// making arrow function came later in js in bs6
+// const thisuser = () => {
+//     let usernamexx = "Shiv Singh Keer"
+//     console.log(this.usernamexx)
+// }
+// thisuser()
+
+// const addtwo = (num1, num2) => {
+//     return num1 + num2
+// }
+
+// console.log(addtwo(5, 2))
+
+// Inpelicit Return
+const addtwo = (num1, num2) => (num1 + num2)
+
+console.log(addtwo(5, 2))
+
+// video This and arrow function at 15:44:02
