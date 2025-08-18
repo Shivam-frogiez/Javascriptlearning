@@ -11,5 +11,14 @@ const user1 = {
 }
 
 user1.username = "Gopal"
-user1.welcomeMessage()
-console.log(typeof(user1))
+// user1.welcomeMessage()
+// console.log(typeof(user1))
+
+// we cant use this in function, used in Object only
+
+function thisuser(){
+    const usernamexx = "ShivSinghKeer"
+    console.log(this.usernamexx)
+}
+
+thisuser()
