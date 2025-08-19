@@ -2,11 +2,11 @@
 // Use of IIFE - it exceutes function Immeditiely / To prevent polluted from global scope
 
 // without IIFE
-// function chai(){
-//     console.log(`DB CONNECTED`)
-// }
+function chai(){
+    console.log(`DB CONNECTED`)
+}
 
-// chai()
+chai()
 
 // with IIFE
 (function chai(){
