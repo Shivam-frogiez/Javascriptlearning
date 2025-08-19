@@ -37,15 +37,20 @@ user1.username = "Gopal"
 // }
 // thisuser()
 
+// Explicit Return
 // const addtwo = (num1, num2) => {
 //     return num1 + num2
 // }
 
 // console.log(addtwo(5, 2))
 
-// Inpelicit Return
+// Impelicit Return
 const addtwo = (num1, num2) => (num1 + num2)
 
-console.log(addtwo(5, 2))
+// console.log(addtwo(5, 2))
 
 // video This and arrow function at 15:44:02
+
+// object in implecit return
+const objectReturn = () => ({username: "ShivSinghKeer"})
+console.log(objectReturn())
