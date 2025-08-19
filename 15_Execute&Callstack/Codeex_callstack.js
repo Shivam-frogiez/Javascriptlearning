@@ -1,0 +1,1 @@
+// How code executes in memory and how it stores in this in global var how call stack works in multiple function how var it excuted in global var as var as undefined and function as defination understanding rule of Call stcak FILo (first in last out) and with multiple functions inside function
