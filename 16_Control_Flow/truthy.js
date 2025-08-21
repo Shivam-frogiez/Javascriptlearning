@@ -13,11 +13,24 @@
 // truthy values: true, "0", 'false', " ", [], {}, function(){}
 
 //  A Way to check array is empty or not
-const userEmail = []
+// const userEmail = []
 
-if (userEmail.length === 0){
-    console.log("Ya it Empty");
+// if (userEmail.length === 0){
+//     console.log("Ya it Empty");
+// }
+// else{
+//     console.log("No it does not Empty");
+// }
+
+
+// A way to check empty object
+const newObj = {
+    name: "Shiv Singh"
+}
+
+if (Object.keys(newObj).length === 0){
+    console.log("Ya it's Empty")
 }
 else{
-    console.log("No it does not Empty");
+    console.log("No it's not Empty")
 }
