@@ -17,9 +17,9 @@ while (arr < myArray.length){
 }
 
 // now do while loop video at 6:32:07 Video Node. 28
-
-let score = 1
+let score = 0
+// let score = 1
 do {
     console.log(`Score is ${score}`)
     score++
-} while (score <= 10);
+} while (score > 10);
