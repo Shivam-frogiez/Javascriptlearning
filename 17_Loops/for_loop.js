@@ -16,5 +16,17 @@ for (const i of myArr) {
 const greetings = "Hello World!"
 
 for (const greet of greetings) {
-    console.log(greet);
+    // console.log(greet);
 }
+
+// Maps
+
+const map = new Map()
+map.set('IN', 'India')
+map.set('USA', 'United States of America')
+map.set('Fr', 'France')
+map.set('UK', 'United Kingdom')
+map.set('IN', 'India') //if we try to duplicate it wont't Map provide unique data
+
+
+console.log(map);
