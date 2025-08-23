@@ -12,8 +12,14 @@ let myArray = [ "flash", "Batman", "Superman"]
 
 let arr = 0
 while (arr < myArray.length){
-    console.log(`Value is ${myArray[arr]}`)
+    // console.log(`Value is ${myArray[arr]}`)
     arr = arr + 1
 }
 
 // now do while loop video at 6:32:07 Video Node. 28
+
+let score = 1
+do {
+    console.log(`Score is ${score}`)
+    score++
+} while (score <= 10);
