@@ -1,0 +1,19 @@
+//string in js
+
+// Given a string "JavaScript is Awesome",
+// Convert it to uppercase
+// Find the position of "Awesome"
+// Extract "Java" using slice().
+
+
+// solution:
+let sample = "JavaScript is Awesome"
+console.log(sample.toUpperCase())
+console.log(sample.search("Awesome"))
+console.log(sample.slice(0,4))
+
+
+
+// Reverse a string without using .reverse().
+// solution:
+
