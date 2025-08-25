@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Playground</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: #f4f6f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header {
+            background: #4a90e2;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        header button {
+            background: white;
+            color: #4a90e2;
+            border: none;
+            padding: 8px 12px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        header button:hover {
+            background: #e3e3e3;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar {
+            width: 220px;
+            background: #fff;
+            border-right: 1px solid #ddd;
+            padding: 15px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidebar li:hover {
+            background: #4a90e2;
+            color: white;
+        }
+
+        #main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #main-content h2 {
+            margin-bottom: 10px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 8px 5px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #4a90e2;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #357ab7;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background: #1e1e1e;
+            color: #eaeaea;
+        }
+
+        .dark-mode header {
+            background: #333;
+        }
+
+        .dark-mode .sidebar {
+            background: #2c2c2c;
+            border-color: #444;
+        }
+
+        .dark-mode .sidebar li:hover {
+            background: #4a90e2;
+            color: white;
+        }
+
+        .dark-mode input, .dark-mode button {
+            background: #333;
+            color: white;
+            border-color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                display: flex;
+                overflow-x: auto;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .sidebar ul {
+                display: flex;
+            }
+
+            .sidebar li {
+                flex: 1;
+                text-align: center;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    JS Playground
+    <button id="toggle-mode">🌙</button>
+</header>
+<div class="container">
+    <nav class="sidebar">
+        <ul>
+            <li onclick="loadModule('basics')">Basics</li>
+            <li onclick="loadModule('strings')">Strings</li>
+            <li onclick="loadModule('math')">Math</li>
+            <li onclick="loadModule('date')">Date</li>
+            <li onclick="loadModule('arrays')">Arrays</li>
+            <li onclick="loadModule('objects')">Objects</li>
+            <li onclick="loadModule('functions')">Functions</li>
+            <li onclick="loadModule('loops')">Loops</li>
+        </ul>
+    </nav>
+    <main id="main-content">
+        <h2>Welcome to JS Playground</h2>
+        <p>Select a module from the sidebar to start learning.</p>
+    </main>
+</div>
+
+<script>
+    const mainContent = document.getElementById('main-content');
+
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById('toggle-mode');
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+
+    // Load Modules
+    function loadModule(module) {
+        switch (module) {
+            case 'basics':
+                mainContent.innerHTML = `
+                    <h2>Basics - Greeting</h2>
+                    <input type="text" id="nameInput" placeholder="Enter your name">
+                    <button onclick="showGreeting()">Greet Me</button>
+                    <p id="greetingOutput"></p>
+                `;
+                break;
+
+            case 'strings':
+                mainContent.innerHTML = `
+                    <h2>String Tools</h2>
+                    <input type="text" id="stringInput" placeholder="Enter text">
+                    <button onclick="toUpperCase()">Uppercase</button>
+                    <button onclick="toLowerCase()">Lowercase</button>
+                    <button onclick="reverseString()">Reverse</button>
+                    <button onclick="checkPalindrome()">Palindrome?</button>
+                    <p id="stringOutput"></p>
+                `;
+                break;
+
+            case 'math':
+                mainContent.innerHTML = `
+                    <h2>Math Tools</h2>
+                    <input type="number" id="num1" placeholder="Number 1">
+                    <input type="number" id="num2" placeholder="Number 2">
+                    <button onclick="calculate('+')">+</button>
+                    <button onclick="calculate('-')">-</button>
+                    <button onclick="calculate('*')">*</button>
+                    <button onclick="calculate('/')">/</button>
+                    <p id="mathOutput"></p>
+                `;
+                break;
+
+            case 'date':
+                mainContent.innerHTML = `
+                    <h2>Date & Time</h2>
+                    <p id="clock"></p>
+                `;
+                startClock();
+                break;
+
+            case 'arrays':
+                mainContent.innerHTML = `
+                    <h2>Array Playground</h2>
+                    <button onclick="showColors()">Show Colors</button>
+                    <p id="arrayOutput"></p>
+                `;
+                break;
+
+            case 'objects':
+                mainContent.innerHTML = `
+                    <h2>Object Demo</h2>
+                    <p id="objectOutput"></p>
+                    <button onclick="showObject()">Show Student Info</button>
+                `;
+                break;
+
+            case 'functions':
+                mainContent.innerHTML = `
+                    <h2>Functions Demo</h2>
+                    <input type="number" id="funcInput" placeholder="Enter a number">
+                    <button onclick="checkEven()">Even or Odd</button>
+                    <p id="funcOutput"></p>
+                `;
+                break;
+
+            case 'loops':
+                mainContent.innerHTML = `
+                    <h2>Loops - Multiplication Table</h2>
+                    <input type="number" id="tableInput" placeholder="Enter number">
+                    <button onclick="generateTable()">Generate Table</button>
+                    <p id="loopOutput"></p>
+                `;
+                break;
+        }
+    }
+
+    // Basics
+    function showGreeting() {
+        const name = document.getElementById('nameInput').value;
+        document.getElementById('greetingOutput').textContent = `Hello, ${name}!`;
+    }
+
+    // Strings
+    function toUpperCase() {
+        const str = document.getElementById('stringInput').value;
+        document.getElementById('stringOutput').textContent = str.toUpperCase();
+    }
+    function toLowerCase() {
+        const str = document.getElementById('stringInput').value;
+        document.getElementById('stringOutput').textContent = str.toLowerCase();
+    }
+    function reverseString() {
+        const str = document.getElementById('stringInput').value;
+        document.getElementById('stringOutput').textContent = str.split('').reverse().join('');
+    }
+    function checkPalindrome() {
+        const str = document.getElementById('stringInput').value;
+        const reversed = str.split('').reverse().join('');
+        document.getElementById('stringOutput').textContent = (str === reversed) ? "Palindrome" : "Not a Palindrome";
+    }
+
+    // Math
+    function calculate(op) {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById('num2').value);
+        let result;
+        switch (op) {
+            case '+': result = num1 + num2; break;
+            case '-': result = num1 - num2; break;
+            case '*': result = num1 * num2; break;
+            case '/': result = (num2 !== 0) ? num1 / num2 : "Error"; break;
+        }
+        document.getElementById('mathOutput').textContent = `Result: ${result}`;
+    }
+
+    // Date
+    function startClock() {
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('clock').textContent = now.toLocaleTimeString();
+        }, 1000);
+    }
+
+    // Arrays
+    const colors = ["Red", "Blue", "Green", "Yellow"];
+    function showColors() {
+        document.getElementById('arrayOutput').textContent = colors.join(', ');
+    }
+
+    // Objects
+    function showObject() {
+        const student = { name: "Shivam", age: 22, course: "JavaScript" };
+        document.getElementById('objectOutput').textContent = `${student.name}, Age: ${student.age}, Course: ${student.course}`;
+    }
+
+    // Functions
+    function checkEven() {
+        const num = parseInt(document.getElementById('funcInput').value);
+        document.getElementById('funcOutput').textContent = (num % 2 === 0) ? "Even" : "Odd";
+    }
+
+    // Loops
+    function generateTable() {
+        const num = parseInt(document.getElementById('tableInput').value);
+        let output = "";
+        for (let i = 1; i <= 10; i++) {
+            output += `${num} x ${i} = ${num * i}<br>`;
+        }
+        document.getElementById('loopOutput').innerHTML = output;
+    }
+</script>
+</body>
+</html>
