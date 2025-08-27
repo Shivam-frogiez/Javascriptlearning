@@ -47,23 +47,44 @@ const myArr = [1234, 31, 12, 235, 23, 3412]
 // rockPaperScissors()
 
 
+// const readline = require("readline");
+
+// // Create input interface
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// });
+
+// function passwordGenerator() {
+//     rl.question("Enter password length: ", (len) => {
+//         len = parseInt(len);
+//         const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+//         let password = "";
+//         for (let i = 0; i < len; i++) {
+//             password += chars.charAt(Math.floor(Math.random() * chars.length));
+//         }
+//         console.log(`Generated Password: ${password}`);
+//     });
+// }
+// passwordGenerator()
+
 const readline = require("readline");
 
-// Create input interface
+// create input interface
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-function passwordGenerator() {
+function passwordGenerator(){
     rl.question("Enter password length: ", (len) => {
         len = parseInt(len);
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*"
         let password = "";
-        for (let i = 0; i < len; i++) {
+        for (let i = 0; i < len; i++){
             password += chars.charAt(Math.floor(Math.random() * chars.length));
         }
         console.log(`Generated Password: ${password}`);
-    });
+    })
 }
 passwordGenerator()
