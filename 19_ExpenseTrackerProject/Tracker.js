@@ -2,7 +2,7 @@ const readline = require("readline");
 const fs = require("fs");
 
 // ✅ File to store expenses
-const FILE_PATH = "expenses.json";
+const FILE_PATH = "19_ExpenseTrackerProject/expenses.json";
 
 // ✅ Load expenses from file or use default
 let expenses = (() => {
@@ -12,12 +12,7 @@ let expenses = (() => {
             if (key === "date") return new Date(value);
             return value;
         });
-    } else {
-        return [
-            { description: "Groceries", amount: 1200, date: new Date("2025-08-25") },
-            { description: "Electricity Bill", amount: 2500, date: new Date("2025-08-20") }
-        ];
-    }
+    } 
 })();
 
 // ✅ Save expenses to file
@@ -40,7 +35,7 @@ function showMenu() {
     3. View Summary
     4. Delete Expense
     5. Exit
-    `);
+    `.trim());
 }
 
 // ✅ Add Expense
@@ -59,7 +54,7 @@ function addExpense(description, amount, date) {
 function viewExpenses() {
     console.log("\n===== All Expenses =====");
     if (expenses.length === 0) {
-        console.log("No expenses found.");
+        console.log("Cart is Empty! Please add Some.");
     } else {
         expenses.forEach((exp, index) => {
             console.log(`${index + 1}. ${exp.description.toUpperCase()} - ₹${exp.amount} on ${exp.date.toDateString()}`);
