@@ -13,6 +13,7 @@ let expenses = (() => {
             return value;
         });
     } 
+      return []; // ✅ Default empty array 
 })();
 
 // ✅ Save expenses to file
