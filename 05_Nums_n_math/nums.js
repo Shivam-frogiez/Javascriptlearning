@@ -12,4 +12,3 @@ console.log(prevalue.toPrecision(3));
 
 const hundred = 10001221
 console.log(hundred.toLocaleString('en-in'));
-

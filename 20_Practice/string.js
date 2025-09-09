@@ -1,5 +1,5 @@
-const name = "Shiv Singh Keer "
-const accountId = 342
+// const name = "Shiv Singh Keer"
+// const accountId = 342
 // console.log(name + accountId + " Testing2")
 
 // anouther way to print string with var called String Interpolation
@@ -11,6 +11,15 @@ const accountId = 342
 // console.log(name.toLowerCase())
 // console.log(name[0])
 // console.log(name.slice(2,5))
-let newName = " Shiv Singh Keer "
-newName = newName.trim()
-console.log(newName)
+// let newName = "Shiv Singh Keer "
+// newName = newName.trim()
+// console.log(newName)
+// let repeatx = "ha"
+// console.log(repeatx.repeat(4))
+
+// let finder = "I Love JS"
+// console.log(finder.search("JS"))
+
+// Q.6
+// let wishx = "Good day!"
+// console.log(wishx.replace("day", "night"));

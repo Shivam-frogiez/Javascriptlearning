@@ -26,8 +26,3 @@ let findx = "I Love to code in JS"
 // Q.6
 let wishx = "Good day!"
 console.log(wishx.replace(day, night));
-
-
-
-
-
