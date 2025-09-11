@@ -48,14 +48,41 @@ const myObject = {
 
 // the method is based on for in loop
 
-const myLanguage = {
-    'JS': 'JavaScript',
-    'HTML': 'Hyper Text Markup Language',
-    'CSS': 'Cascadeing Style Sheet',
-    'RB': 'Ruby',
-    'Ai': 'Artifical Intelligence'
+// const myLanguage = {
+//     'JS': 'JavaScript',
+//     'HTML': 'Hyper Text Markup Language',
+//     'CSS': 'Cascadeing Style Sheet',
+//     'RB': 'Ruby',
+//     'Ai': 'Artifical Intelligence'
+// }
+
+// for (const key in myLanguage) {
+//     console.log(`${key} is the shortcut of ${myLanguage[key]}`);
+// } //continue video at 16:12:00
+
+const myNewObject = {
+    'Name' : "Shiv Singh Keer",
+    'Age' : 24,
+    'Subject' : 'Full Stack Developer',
+    'Palace' : 'Puwaliya Gauv'
 }
 
-for (const key in myLanguage) {
-    console.log(key);
-} //continue video at 16:12:00
+for (const values in myNewObject) {
+    // console.log(`${values} :- ${myNewObject[values]}`)
+}
+
+// printing array in forin loops
+
+const myNewArray = ["This" , "is" , "too" , "good" , "for" , "the" , "bycycle" ]
+
+for (const key in myNewArray) {
+    // console.log(key)
+}
+
+// now playing with for each loop
+
+const foreachexample = ["JS" , "Css" , "HTML" , "Node" , "Flutter" , "ML"]
+
+foreachexample.forEach( function (val){
+    console.log(`${val} + 1`)
+} )
