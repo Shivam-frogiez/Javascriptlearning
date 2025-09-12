@@ -83,6 +83,44 @@ for (const key in myNewArray) {
 
 const foreachexample = ["JS" , "Css" , "HTML" , "Node" , "Flutter" , "ML"]
 
-foreachexample.forEach( function (val){
-    console.log(`${val} + 1`)
+// foreachexample.forEach( function (val){
+//     console.log(`${val} + 1`)
+// } )
+
+// printing through arrow function
+// foreachexample.forEach ( (varx) => {
+//     console.log(`${varx}`);    
+// })
+
+// printing through Function
+// function printMe(item){
+//     console.log(item);
+// }
+
+// foreachexample.forEach(printMe)
+
+// foreachexample.forEach( (item, index, arr) => {
+//     console.log(item, index, arr);
+// } )
+
+// object inside a array N applying a for each loop with arrow function
+
+const mySkills = [
+    {
+        languageName : "JavaScript",
+        languageExtension : "JS"
+    },
+    {
+        languageName : "Python",
+        languageExtension : "PY"
+    },
+    {
+        languageName : "Cascadeing Style Sheet",
+        languageExtension : "CSS"
+    }
+]
+
+mySkills.forEach( (item) => {
+    console.log(`The Language Name is ${item.languageName} N their extension is ${item.languageExtension}`);
+    
 } )
